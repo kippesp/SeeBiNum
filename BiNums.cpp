@@ -1,6 +1,32 @@
 // BiNums, see binary numbers
 
-#include "precomp.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <string_view>
+#include <assert.h>
+#include <vector>
+#include "Half.h"
+#include "Int24.h"
+#include "FixedNumber.h"
+#include "Float16m7e8s1.h"
+
+#ifndef WIN32
+#define _In_z_
+#define _Inout_
+#define _Out_
+#define _Null_terminated_
+#endif
+
+using float32_t = float;
+using float64_t = double;
+using float16_t = half_float::half;
+using bfloat16_t = float16m7e8s1_t;
+
+static_assert(sizeof(float32_t) == 4);
+static_assert(sizeof(float64_t) == 8);
+static_assert(sizeof(float16_t) == 2);
+static_assert(sizeof(bfloat16_t) == 2);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Generic functions/classes.
@@ -552,6 +578,7 @@ NumberSubstructure const& GetElementTypeSubstructure(ElementType dataType) noexc
     case ElementType::Fixed24f12i12:    value = *reinterpret_cast<const Fixed24f12i12*>(data);      break;
     case ElementType::Fixed32f16i16:    value = *reinterpret_cast<const Fixed32f16i16*>(data);      break;
     case ElementType::Fixed32f24i8:     value = *reinterpret_cast<const Fixed32f24i8*>(data);       break;
+    default:                            assert(0 && "fallthrough");
     }
 
     return value;
@@ -583,6 +610,7 @@ NumberSubstructure const& GetElementTypeSubstructure(ElementType dataType) noexc
     case ElementType::Fixed24f12i12:    value = int64_t(*reinterpret_cast<const Fixed24f12i12*>(data)); break;
     case ElementType::Fixed32f16i16:    value = int64_t(*reinterpret_cast<const Fixed32f16i16*>(data)); break;
     case ElementType::Fixed32f24i8:;    value = int64_t(*reinterpret_cast<const Fixed32f24i8*>(data));  break;
+    default:                            assert(0 && "fallthrough");
     }
 
     return value;
@@ -614,6 +642,7 @@ NumberSubstructure const& GetElementTypeSubstructure(ElementType dataType) noexc
     case ElementType::Fixed24f12i12:    value = int64_t(*reinterpret_cast<const int24_t*>(data));   break;
     case ElementType::Fixed32f16i16:    value = int64_t(*reinterpret_cast<const int32_t*>(data));   break;
     case ElementType::Fixed32f24i8:;    value = int64_t(*reinterpret_cast<const int32_t*>(data));   break;
+    default:                            assert(0 && "fallthrough");
     }
 
     return value;
@@ -643,6 +672,7 @@ void WriteFromDouble(ElementType dataType, double value, /*out*/ void* data)
     case ElementType::Fixed24f12i12:    *reinterpret_cast<Fixed24f12i12*>(data) = float(value);     break;
     case ElementType::Fixed32f16i16:    *reinterpret_cast<Fixed32f16i16*>(data) = float(value);     break;
     case ElementType::Fixed32f24i8:;    *reinterpret_cast<Fixed32f24i8*>(data) = float(value);      break;
+    default:                            assert(0 && "fallthrough");
     }
 
     // Use half_float::detail::float2half explicitly rather than the half constructor.
@@ -677,6 +707,7 @@ void WriteFromInt64(ElementType dataType, int64_t value, /*out*/ void* data)
     case ElementType::Fixed24f12i12: *reinterpret_cast<Fixed24f12i12*>(data) = float(value);            break;
     case ElementType::Fixed32f16i16: *reinterpret_cast<Fixed32f16i16*>(data) = float(value);            break;
     case ElementType::Fixed32f24i8:  *reinterpret_cast<Fixed32f24i8*>(data) = float(value);             break;
+    default:                            assert(0 && "fallthrough");
     }
 }
 
@@ -704,6 +735,7 @@ void CastElementType(ElementType dataType, void const* inputData, /*out*/ void* 
     case ElementType::Fixed24f12i12: *reinterpret_cast<Fixed24f12i12*>(outputData) = *reinterpret_cast<const Fixed24f12i12*>(inputData);  break;
     case ElementType::Fixed32f16i16: *reinterpret_cast<uint32_t*>(outputData)   = *reinterpret_cast<const uint32_t*>(inputData);    break;
     case ElementType::Fixed32f24i8:  *reinterpret_cast<uint32_t*>(outputData)   = *reinterpret_cast<const uint32_t*>(inputData);    break;
+    default:                            assert(0 && "fallthrough");
     }
 }
 
@@ -789,7 +821,8 @@ void AppendFormattedRawInteger(
 {
     const uint32_t bitOffset = bitRange.begin;
     const uint32_t bitCount = bitRange.end - bitOffset;
-    const uint64_t valueMask = (bitCount >= 64) ? ~uint64_t(0) : (1ui64 << bitCount) - 1;
+    const uint64_t valueMask = (bitCount >= 64) ? ~uint64_t(0) : (uint64_t(1) << bitCount) - 1;
+
     value >>= bitOffset;
     value &= valueMask;
 
@@ -1516,6 +1549,8 @@ void PerformNumericOperation(
     case NumericOperationType::Nothing:
         results.clear();
         return;
+    default:
+        assert(0 && "fallthrough");
     }
 
     if (resultCount <= 0)
