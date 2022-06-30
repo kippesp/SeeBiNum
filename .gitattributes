@@ -1,18 +1,20 @@
-# Auto detect text files and do not perform LF normalization - leave files as-is!
-* -text
+# Set the default behavior to store text line endings as as LF; overrides any [core] settings
+* text=false
 
-*.cs text diff=csharp
-*.txt text diff
-*.h text diff
-*.c text diff
-*.cpp text diff
-*.md text diff
-*.vcxproj text diff
-*.sln text diff
+# Text files to be normalized to native line endings
+*.c text
+*.cpp text
+*.h text
+*.md text
+
+.gitattributes text
+.gitignore text
+.gitconfig text
+.gitmodules text
 
 # Text to files to always have CRLF line endings
-*.sln text diff eol=crlf
-*.vcxproj text diff eol=crlf
+*.sln text eol=crlf
+*.vcxproj text eol=crlf
 
 # Binary files not to be modified
 *.png binary
