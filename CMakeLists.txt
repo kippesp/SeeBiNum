@@ -7,28 +7,18 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# TODO: Need a smarter way to do this
-#if(WIN32)
-#  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
-#  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
-#endif()
-
 # Set the build artifacts directories
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/lib")
 
+# FUTURE: Maybe a less agressive set of warnings
 #if (NOT MSVC)
 #  add_compile_options(-Wall)
 #  add_compile_options(-Wextra)
 #  add_compile_options(-Wimplicit-fallthrough)
 #
-#  # LLVM has some unused parameters
-#  add_compile_options(-Wno-unused-parameter)
-#
 #  if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-#    add_compile_options(-ferror-limit=10)
-#
 #    add_compile_options(-Weverything)
 #    add_compile_options(-Wno-c++98-compat)
 #    add_compile_options(-Wno-c++98-compat-pedantic)
@@ -47,7 +37,48 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/lib")
 #  endif()
 #endif()
 
+if (MSVC)
+  add_compile_options(/W4)
+endif()
+
+if(UNIX)
+  find_program(LLVM_CONFIG_BINARY NAMES llvm-config)
+
+  execute_process(
+    COMMAND "${LLVM_CONFIG_BINARY}" --libdir
+    OUTPUT_VARIABLE LOCAL_LIB_DIR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+
+  separate_arguments(LOCAL_INCLUDE_DIR)
+  #list(APPEND CMAKE_INSTALL_RPATH ${LOCAL_LIB_DIR})
+
+  #add_link_options(${LOCAL_LIBCPP_LDFLAGS})
+
+  #execute_process(
+  #  COMMAND "${LLVM_CONFIG_BINARY}" --includedir
+  #  OUTPUT_VARIABLE LOCAL_INCLUDE_DIR
+  #  OUTPUT_STRIP_TRAILING_WHITESPACE
+  #)
+  #
+  #separate_arguments(LOCAL_INCLUDE_DIR)
+
+  # Use my local LLVM install
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+  link_libraries("-Wl,-rpath,${LOCAL_LIB_DIR}")
+
+endif()
+
+#set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-rpath,${LOCAL_LIB_DIR}")
+#set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -Wl,-rpath,${LOCAL_LIB_DIR}")
+#set(CMAKE_EXE_LINKER_FLAGS_INIT "${CMAKE_EXE_LINKER_FLAGS_INIT} -Wl,-rpath,${LOCAL_LIB_DIR}")
+
 add_executable(binums)
+
+#target_compile_options(binums PUBLIC
+#  -stdlib=libc++
+#)
+#-stdlib=libc++
 
 target_sources(binums PUBLIC
   BiNums.cpp
@@ -59,7 +90,6 @@ target_sources(binums PUBLIC
   precomp.cpp
 )
 
-
-target_compile_options(binums PUBLIC
-  /W4
+target_include_directories(binums PUBLIC
+  ${LOCAL_INCLUDE_DIR}
 )
