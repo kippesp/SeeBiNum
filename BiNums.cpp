@@ -2,6 +2,13 @@
 
 #include "precomp.h"
 
+#ifndef WIN32
+#define _In_z_
+#define _Inout_
+#define _Out_
+#define _Null_terminated_
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 // Generic functions/classes.
 
