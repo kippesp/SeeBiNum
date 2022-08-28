@@ -795,7 +795,7 @@ void AppendFormattedRawInteger(
 {
     const uint32_t bitOffset = bitRange.begin;
     const uint32_t bitCount = bitRange.end - bitOffset;
-    const uint64_t valueMask = (bitCount >= 64) ? ~uint64_t(0) : (1ui64 << bitCount) - 1;
+    const uint64_t valueMask = (bitCount >= 64) ? ~uint64_t(0) : (uint64_t(1) << bitCount) - 1;
     value >>= bitOffset;
     value &= valueMask;
 
