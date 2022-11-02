@@ -1,32 +1,6 @@
 ﻿// BiNums, see binary numbers
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <string_view>
-#include <assert.h>
-#include <vector>
-#include "Half.h"
-#include "Int24.h"
-#include "FixedNumber.h"
-#include "Float16m7e8s1.h"
-
-#ifndef WIN32
-#define _In_z_
-#define _Inout_
-#define _Out_
-#define _Null_terminated_
-#endif
-
-using float32_t = float;
-using float64_t = double;
-using float16_t = half_float::half;
-using bfloat16_t = float16m7e8s1_t;
-
-static_assert(sizeof(float32_t) == 4);
-static_assert(sizeof(float64_t) == 8);
-static_assert(sizeof(float16_t) == 2);
-static_assert(sizeof(bfloat16_t) == 2);
+#include "precomp.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Generic functions/classes.
@@ -279,8 +253,8 @@ enum class NumericPrintingFlags : uint32_t
 inline constexpr NumericPrintingFlags operator ~ (NumericPrintingFlags lhs) { return NumericPrintingFlags(~uint32_t(lhs)); }
 inline constexpr NumericPrintingFlags operator & (NumericPrintingFlags lhs, NumericPrintingFlags rhs) { return NumericPrintingFlags(uint32_t(lhs) & uint32_t(rhs)); }
 inline constexpr NumericPrintingFlags operator | (NumericPrintingFlags lhs, NumericPrintingFlags rhs) { return NumericPrintingFlags(uint32_t(lhs) & uint32_t(rhs)); }
-inline constexpr bool operator == (NumericPrintingFlags lhs, uint32_t rhs) { return uint32_t(lhs) == 0; }
-inline constexpr bool operator != (NumericPrintingFlags lhs, uint32_t rhs) { return uint32_t(lhs) != 0; }
+inline constexpr bool operator == (NumericPrintingFlags lhs, uint32_t /* rhs */) { return uint32_t(lhs) == 0; }
+inline constexpr bool operator != (NumericPrintingFlags lhs, uint32_t /* rhs */) { return uint32_t(lhs) != 0; }
 
 struct NumberUnionAndType
 {
@@ -1138,7 +1112,7 @@ void PrintAllNumericTypesFromBinary(
 void PrintAllPrintingFormats(
     double valueFloat,
     int64_t valueInteger,
-    NumericPrintingFlags numericPrintingFlags = NumericPrintingFlags::Default,
+    NumericPrintingFlags /* numericPrintingFlags = NumericPrintingFlags::Default */,
     ElementType elementType = ElementType::Undefined
 )
 {
