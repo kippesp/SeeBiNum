@@ -1,6 +1,32 @@
 ﻿// BiNums, see binary numbers
 
-#include "precomp.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <string_view>
+#include <assert.h>
+#include <vector>
+#include "Half.h"
+#include "Int24.h"
+#include "FixedNumber.h"
+#include "Float16m7e8s1.h"
+
+#ifndef WIN32
+#define _In_z_
+#define _Inout_
+#define _Out_
+#define _Null_terminated_
+#endif
+
+using float32_t = float;
+using float64_t = double;
+using float16_t = half_float::half;
+using bfloat16_t = float16m7e8s1_t;
+
+static_assert(sizeof(float32_t) == 4);
+static_assert(sizeof(float64_t) == 8);
+static_assert(sizeof(float16_t) == 2);
+static_assert(sizeof(bfloat16_t) == 2);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Generic functions/classes.
@@ -795,7 +821,7 @@ void AppendFormattedRawInteger(
 {
     const uint32_t bitOffset = bitRange.begin;
     const uint32_t bitCount = bitRange.end - bitOffset;
-    const uint64_t valueMask = (bitCount >= 64) ? ~uint64_t(0) : (1ui64 << bitCount) - 1;
+    const uint64_t valueMask = (bitCount >= 64) ? ~uint64_t(0) : (uint64_t(1) << bitCount) - 1;
     value >>= bitOffset;
     value &= valueMask;
 
