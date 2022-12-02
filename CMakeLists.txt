@@ -12,6 +12,26 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/$<CONFIG>/lib")
 
+option(USE_CCACHE "Enable ccache" ON)
+
+if (USE_CCACHE)
+  find_program(ccache_exe ccache)
+  if(ccache_exe)
+    message(STATUS "Found ccache: ${ccache_exe}")
+    file(COPY_FILE
+      ${ccache_exe} ${CMAKE_BINARY_DIR}/cl.exe
+      ONLY_IF_DIFFERENT)
+
+    set(CMAKE_VS_GLOBALS
+      "CLToolExe=cl.exe"
+      "CLToolPath=${CMAKE_BINARY_DIR}"
+      "TrackFileAccess=false"
+      "UseMultiToolTask=true"
+      "DebugInformationFormat=OldStyle"
+    )
+  endif()
+endif()
+
 if (MSVC)
   add_compile_options(/W3)
   add_compile_options(/sdl)
@@ -55,6 +75,10 @@ target_sources(binums PUBLIC
 )
 
 add_executable(binumstest)
+
+message(STATUS "FLAGS (before): ${CMAKE_CXX_FLAGS_DEBUG}")
+string(REPLACE "/Zi" "/Z7" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
+message(STATUS "FLAGS (after): ${CMAKE_CXX_FLAGS_DEBUG}")
 
 target_sources(binumstest PUBLIC
   Common.h

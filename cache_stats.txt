@@ -1,0 +1,399 @@
+C:\Users\kippesp\projects\seebinums.git\build2
+> ccache -z -C -c
+Statistics zeroed
+Clearing... 100.0% [==================================================================================================]
+Cleaning... 100.0% [==================================================================================================]
+
+C:\Users\kippesp\projects\seebinums.git\build2
+> ccache -s
+Local storage:
+  Cache size (GB): 0.00 / 5.00 ( 0.00%)
+  Cleanups:           8
+
+C:\Users\kippesp\projects\seebinums.git\build2
+> timeit cmake --build . --config Debug --verbose --clean-first
+MSBuild version 17.4.0+18d5aef85 for .NET Framework
+Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+Build started 12/1/2022 11:10:53 PM.
+Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" on node 1 (Clean target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|x64".
+ValidateProjects:
+  The project "ALL_BUILD" is not selected for building in solution configuration "Debug|x64".
+Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" (1) is building "C:\Users\kippesp\projects\seebinum
+s.git\build2\binumstest.vcxproj.metaproj" (2) on node 1 (Clean target(s)).
+Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj.metaproj" (2) is building "C:\Users\kippesp\
+projects\seebinums.git\build2\ZERO_CHECK.vcxproj" (3) on node 1 (Clean target(s)).
+_PrepareForClean:
+  Deleting file "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\ZERO_CHECK.vcxproj" (Clean target(s)).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj.metaproj" (2) is building "C:\Users\kippesp\
+projects\seebinums.git\build2\binumstest.vcxproj" (4) on node 1 (Clean target(s)).
+_PrepareForClean:
+  Deleting file "binumstest.dir\Debug\binumstest.tlog\binumstest.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj" (Clean target(s)).
+
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj.metaproj" (Clean target(s)).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" (1) is building "C:\Users\kippesp\projects\seebinum
+s.git\build2\binums.vcxproj.metaproj" (5) on node 1 (Clean target(s)).
+Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj.metaproj" (5) is building "C:\Users\kippesp\proj
+ects\seebinums.git\build2\binums.vcxproj" (6) on node 1 (Clean target(s)).
+_PrepareForClean:
+  Deleting file "binums.dir\Debug\binums.tlog\binums.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj" (Clean target(s)).
+
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj.metaproj" (Clean target(s)).
+
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" (Clean target(s)).
+
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.28
+MSBuild version 17.4.0+18d5aef85 for .NET Framework
+Build started 12/1/2022 11:10:54 PM.
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" on node 1 (default targets).
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (1) is building "C:\Users\kippesp\projects\s
+eebinums.git\build2\ZERO_CHECK.vcxproj" (2) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Checking Build System
+FinalizeBuildStatus:
+  Deleting file "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Touching "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\ZERO_CHECK.vcxproj" (default targets).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (1) is building "C:\Users\kippesp\projects\s
+eebinums.git\build2\binums.vcxproj" (3) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "binums.dir\Debug\binums.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Building Custom Rule C:/Users/kippesp/projects/seebinums.git/CMakeLists.txt
+ClCompile:
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binums.dir\Debug\\" /Fd"binums.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorReport:qu
+  eue "C:\Users\kippesp\projects\seebinums.git\precomp.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binums.dir\Debug\\" /Fd"binums.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorReport:qu
+  eue "C:\Users\kippesp\projects\seebinums.git\BiNumsMain.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binums.dir\Debug\\" /Fd"binums.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorReport:qu
+  eue C:\Users\kippesp\projects\seebinums.git\BiNums.cpp
+  precomp.cpp
+  BiNumsMain.cpp
+  BiNums.cpp
+C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t' t
+o 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj]
+Link:
+  C:\Program Files\BullseyeCoverage\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\kippesp\projects\seebinums.git\build
+  2\Debug\bin\binums.exe" /INCREMENTAL /ILK:"binums.dir\Debug\binums.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib win
+  spool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvo
+  ker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kippesp/projects/seebinums.git/build2/Debug/bin/binums.p
+  db" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kippesp/projects/seebinums.git/build2/Debug/
+  lib/binums.lib" /MACHINE:X64  /machine:x64 binums.dir\Debug\BiNums.obj
+  binums.dir\Debug\BiNumsMain.obj
+  binums.dir\Debug\precomp.obj
+  binums.vcxproj -> C:\Users\kippesp\projects\seebinums.git\build2\Debug\bin\binums.exe
+FinalizeBuildStatus:
+  Deleting file "binums.dir\Debug\binums.tlog\unsuccessfulbuild".
+  Touching "binums.dir\Debug\binums.tlog\binums.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj" (default targets).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (1) is building "C:\Users\kippesp\projects\s
+eebinums.git\build2\binumstest.vcxproj" (4) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "binumstest.dir\Debug\binumstest.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Building Custom Rule C:/Users/kippesp/projects/seebinums.git/CMakeLists.txt
+ClCompile:
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binumstest.dir\Debug\\" /Fd"binumstest.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorR
+  eport:queue "C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binumstest.dir\Debug\\" /Fd"binumstest.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorR
+  eport:queue "C:\Users\kippesp\projects\seebinums.git\precomp.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binumstest.dir\Debug\\" /Fd"binumstest.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorR
+  eport:queue C:\Users\kippesp\projects\seebinums.git\BiNums.cpp
+  precomp.cpp
+  BiNums.cpp
+C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t' t
+o 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+  BiNumsTest.cpp
+C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp(114,12): warning C4477: 'printf' : format string '%.*s' requires
+ an argument of type 'int', but variadic argument 1 has type 'std::basic_string_view<char,std::char_traits<char>>::size
+_type' [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+  C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp(114,12): note: this argument is used as a precision
+Link:
+  C:\Program Files\BullseyeCoverage\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\kippesp\projects\seebinums.git\build
+  2\Debug\bin\binumstest.exe" /INCREMENTAL /ILK:"binumstest.dir\Debug\binumstest.ilk" /NOLOGO kernel32.lib user32.lib g
+  di32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"l
+  evel='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kippesp/projects/seebinums.git/build2/Debug/
+  bin/binumstest.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kippesp/projects/seebinums.g
+  it/build2/Debug/lib/binumstest.lib" /MACHINE:X64  /machine:x64 binumstest.dir\Debug\BiNums.obj
+  binumstest.dir\Debug\BiNumsTest.obj
+  binumstest.dir\Debug\precomp.obj
+  binumstest.vcxproj -> C:\Users\kippesp\projects\seebinums.git\build2\Debug\bin\binumstest.exe
+FinalizeBuildStatus:
+  Deleting file "binumstest.dir\Debug\binumstest.tlog\unsuccessfulbuild".
+  Touching "binumstest.dir\Debug\binumstest.tlog\binumstest.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj" (default targets).
+
+InitializeBuildStatus:
+  Creating "x64\Debug\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Building Custom Rule C:/Users/kippesp/projects/seebinums.git/CMakeLists.txt
+FinalizeBuildStatus:
+  Deleting file "x64\Debug\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild".
+  Touching "x64\Debug\ALL_BUILD\ALL_BUILD.tlog\ALL_BUILD.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (default targets).
+
+
+Build succeeded.
+
+"C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (default target) (1) ->
+"C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj" (default target) (3) ->
+(ClCompile target) ->
+  C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t'
+ to 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj]
+
+
+"C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (default target) (1) ->
+"C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj" (default target) (4) ->
+  C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t'
+ to 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+  C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp(114,12): warning C4477: 'printf' : format string '%.*s' requir
+es an argument of type 'int', but variadic argument 1 has type 'std::basic_string_view<char,std::char_traits<char>>::si
+ze_type' [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+
+    3 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.53
+
+Version Number:   Windows NT 6.2 (Build 9200)
+Exit Time:        11:10 pm, Thursday, December 1 2022
+Elapsed Time:     0:00:05.162
+Process Time:     0:00:00.015
+System Calls:     2158118
+Context Switches: 115398
+Page Faults:      619257
+Bytes Read:       478534862
+Bytes Written:    57490533
+Bytes Other:      166371469
+
+C:\Users\kippesp\projects\seebinums.git\build2
+> ccache -s
+Cacheable calls:      6 /    6 (100.0%)
+  Hits:               2 /    6 (33.33%)
+    Direct:           0 /    2 ( 0.00%)
+    Preprocessed:     2 /    2 (100.0%)
+  Misses:             4 /    6 (66.67%)
+Local storage:
+  Cache size (GB): 0.00 / 5.00 ( 0.01%)
+  Cleanups:           8
+
+C:\Users\kippesp\projects\seebinums.git\build2
+> timeit cmake --build . --config Debug --verbose --clean-first
+MSBuild version 17.4.0+18d5aef85 for .NET Framework
+Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+Build started 12/1/2022 11:11:05 PM.
+Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" on node 1 (Clean target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|x64".
+ValidateProjects:
+  The project "ALL_BUILD" is not selected for building in solution configuration "Debug|x64".
+Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" (1) is building "C:\Users\kippesp\projects\seebinum
+s.git\build2\binumstest.vcxproj.metaproj" (2) on node 1 (Clean target(s)).
+Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj.metaproj" (2) is building "C:\Users\kippesp\
+projects\seebinums.git\build2\ZERO_CHECK.vcxproj" (3) on node 1 (Clean target(s)).
+_PrepareForClean:
+  Deleting file "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\ZERO_CHECK.vcxproj" (Clean target(s)).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj.metaproj" (2) is building "C:\Users\kippesp\
+projects\seebinums.git\build2\binumstest.vcxproj" (4) on node 1 (Clean target(s)).
+_PrepareForClean:
+  Deleting file "binumstest.dir\Debug\binumstest.tlog\binumstest.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj" (Clean target(s)).
+
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj.metaproj" (Clean target(s)).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" (1) is building "C:\Users\kippesp\projects\seebinum
+s.git\build2\binums.vcxproj.metaproj" (5) on node 1 (Clean target(s)).
+Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj.metaproj" (5) is building "C:\Users\kippesp\proj
+ects\seebinums.git\build2\binums.vcxproj" (6) on node 1 (Clean target(s)).
+_PrepareForClean:
+  Deleting file "binums.dir\Debug\binums.tlog\binums.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj" (Clean target(s)).
+
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj.metaproj" (Clean target(s)).
+
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\BiNums.sln" (Clean target(s)).
+
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.28
+MSBuild version 17.4.0+18d5aef85 for .NET Framework
+Build started 12/1/2022 11:11:06 PM.
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" on node 1 (default targets).
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (1) is building "C:\Users\kippesp\projects\s
+eebinums.git\build2\ZERO_CHECK.vcxproj" (2) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Checking Build System
+FinalizeBuildStatus:
+  Deleting file "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\unsuccessfulbuild".
+  Touching "x64\Debug\ZERO_CHECK\ZERO_CHECK.tlog\ZERO_CHECK.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\ZERO_CHECK.vcxproj" (default targets).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (1) is building "C:\Users\kippesp\projects\s
+eebinums.git\build2\binums.vcxproj" (3) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "binums.dir\Debug\binums.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Building Custom Rule C:/Users/kippesp/projects/seebinums.git/CMakeLists.txt
+ClCompile:
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binums.dir\Debug\\" /Fd"binums.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorReport:qu
+  eue "C:\Users\kippesp\projects\seebinums.git\BiNumsMain.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binums.dir\Debug\\" /Fd"binums.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorReport:qu
+  eue "C:\Users\kippesp\projects\seebinums.git\precomp.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binums.dir\Debug\\" /Fd"binums.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorReport:qu
+  eue C:\Users\kippesp\projects\seebinums.git\BiNums.cpp
+  precomp.cpp
+  BiNumsMain.cpp
+  BiNums.cpp
+C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t' t
+o 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj]
+Link:
+  C:\Program Files\BullseyeCoverage\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\kippesp\projects\seebinums.git\build
+  2\Debug\bin\binums.exe" /INCREMENTAL /ILK:"binums.dir\Debug\binums.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib win
+  spool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvo
+  ker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kippesp/projects/seebinums.git/build2/Debug/bin/binums.p
+  db" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kippesp/projects/seebinums.git/build2/Debug/
+  lib/binums.lib" /MACHINE:X64  /machine:x64 binums.dir\Debug\BiNums.obj
+  binums.dir\Debug\BiNumsMain.obj
+  binums.dir\Debug\precomp.obj
+  binums.vcxproj -> C:\Users\kippesp\projects\seebinums.git\build2\Debug\bin\binums.exe
+FinalizeBuildStatus:
+  Deleting file "binums.dir\Debug\binums.tlog\unsuccessfulbuild".
+  Touching "binums.dir\Debug\binums.tlog\binums.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj" (default targets).
+
+Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (1) is building "C:\Users\kippesp\projects\s
+eebinums.git\build2\binumstest.vcxproj" (4) on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "binumstest.dir\Debug\binumstest.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Building Custom Rule C:/Users/kippesp/projects/seebinums.git/CMakeLists.txt
+ClCompile:
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binumstest.dir\Debug\\" /Fd"binumstest.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorR
+  eport:queue "C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binumstest.dir\Debug\\" /Fd"binumstest.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorR
+  eport:queue "C:\Users\kippesp\projects\seebinums.git\precomp.cpp"
+  C:\Users\kippesp\projects\seebinums.git\build2\cl.exe /c /Z7 /nologo /W4 /WX- /diagnostics:column /sdl /Od /Ob0 /D _M
+  BCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /
+  Zc:inline /GR /std:c++20 /Fo"binumstest.dir\Debug\\" /Fd"binumstest.dir\Debug\vc143.pdb" /external:W4 /Gd /TP /errorR
+  eport:queue C:\Users\kippesp\projects\seebinums.git\BiNums.cpp
+  precomp.cpp
+  BiNums.cpp
+C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t' t
+o 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+  BiNumsTest.cpp
+C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp(114,12): warning C4477: 'printf' : format string '%.*s' requires
+ an argument of type 'int', but variadic argument 1 has type 'std::basic_string_view<char,std::char_traits<char>>::size
+_type' [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+  C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp(114,12): note: this argument is used as a precision
+Link:
+  C:\Program Files\BullseyeCoverage\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\kippesp\projects\seebinums.git\build
+  2\Debug\bin\binumstest.exe" /INCREMENTAL /ILK:"binumstest.dir\Debug\binumstest.ilk" /NOLOGO kernel32.lib user32.lib g
+  di32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"l
+  evel='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kippesp/projects/seebinums.git/build2/Debug/
+  bin/binumstest.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kippesp/projects/seebinums.g
+  it/build2/Debug/lib/binumstest.lib" /MACHINE:X64  /machine:x64 binumstest.dir\Debug\BiNums.obj
+  binumstest.dir\Debug\BiNumsTest.obj
+  binumstest.dir\Debug\precomp.obj
+  binumstest.vcxproj -> C:\Users\kippesp\projects\seebinums.git\build2\Debug\bin\binumstest.exe
+FinalizeBuildStatus:
+  Deleting file "binumstest.dir\Debug\binumstest.tlog\unsuccessfulbuild".
+  Touching "binumstest.dir\Debug\binumstest.tlog\binumstest.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj" (default targets).
+
+InitializeBuildStatus:
+  Creating "x64\Debug\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+CustomBuild:
+  Building Custom Rule C:/Users/kippesp/projects/seebinums.git/CMakeLists.txt
+FinalizeBuildStatus:
+  Deleting file "x64\Debug\ALL_BUILD\ALL_BUILD.tlog\unsuccessfulbuild".
+  Touching "x64\Debug\ALL_BUILD\ALL_BUILD.tlog\ALL_BUILD.lastbuildstate".
+Done Building Project "C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (default targets).
+
+
+Build succeeded.
+
+"C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (default target) (1) ->
+"C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj" (default target) (3) ->
+(ClCompile target) ->
+  C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t'
+ to 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binums.vcxproj]
+
+
+"C:\Users\kippesp\projects\seebinums.git\build2\ALL_BUILD.vcxproj" (default target) (1) ->
+"C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj" (default target) (4) ->
+  C:\Users\kippesp\projects\seebinums.git\BiNums.cpp(793,24): warning C4244: 'initializing': conversion from 'uint32_t'
+ to 'char', possible loss of data [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+  C:\Users\kippesp\projects\seebinums.git\BiNumsTest.cpp(114,12): warning C4477: 'printf' : format string '%.*s' requir
+es an argument of type 'int', but variadic argument 1 has type 'std::basic_string_view<char,std::char_traits<char>>::si
+ze_type' [C:\Users\kippesp\projects\seebinums.git\build2\binumstest.vcxproj]
+
+    3 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.07
+
+Version Number:   Windows NT 6.2 (Build 9200)
+Exit Time:        11:11 pm, Thursday, December 1 2022
+Elapsed Time:     0:00:01.709
+Process Time:     0:00:00.000
+System Calls:     1338195
+Context Switches: 57609
+Page Faults:      199942
+Bytes Read:       48149290
+Bytes Written:    8196494
+Bytes Other:      117243869
+
+C:\Users\kippesp\projects\seebinums.git\build2
+> ccache -s
+Cacheable calls:     12 /   12 (100.0%)
+  Hits:               8 /   12 (66.67%)
+    Direct:           6 /    8 (75.00%)
+    Preprocessed:     2 /    8 (25.00%)
+  Misses:             4 /   12 (33.33%)
+Local storage:
+  Cache size (GB): 0.00 / 5.00 ( 0.01%)
+  Cleanups:           8
