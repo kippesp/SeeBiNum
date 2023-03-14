@@ -33,29 +33,29 @@ struct SetAndSaveConsoleAttribute
         #endif
     }
 
-    SetAndSaveConsoleAttribute(WORD newAttributes) : SetAndSaveConsoleAttribute()
+    SetAndSaveConsoleAttribute(uint16_t newAttributes) : SetAndSaveConsoleAttribute()
     {
         UpdateAttributes(newAttributes);
     }
 
-    SetAndSaveConsoleAttribute(WORD setAttributes, WORD clearAttributes) : SetAndSaveConsoleAttribute()
+    SetAndSaveConsoleAttribute(uint16_t setAttributes, uint16_t clearAttributes) : SetAndSaveConsoleAttribute()
     {
         UpdateAttributes(setAttributes, clearAttributes);
     }
 
-    void UpdateForegroundColor(WORD foregroundColor)
+    void UpdateForegroundColor(uint16_t foregroundColor)
     {
         UpdateAttributes(foregroundColor & 0x000F, 0x000F);
     }
 
-    void UpdateAttributes(WORD newAttributes)
+    void UpdateAttributes(uint16_t newAttributes)
     {
         #ifdef _WIN32
         SetConsoleTextAttribute(hConsole_, newAttributes);
         #endif
     }
 
-    void UpdateAttributes(WORD setAttributes, WORD clearAttributes)
+    void UpdateAttributes(uint16_t setAttributes, uint16_t clearAttributes)
     {
         #ifdef _WIN32
         SetConsoleTextAttribute(hConsole_, (consoleInfo_.wAttributes & ~clearAttributes) | setAttributes);

@@ -113,7 +113,7 @@ namespace FloatNumberDetails
             // Optimized path can just shift. This applies to bfloat16 <-> IEEE float32.
             IntermediateType const sourceIntermediate = IntermediateType(sourceValue);
             IntermediateType const targetValue = LeftRightShift(sourceIntermediate, int32_t(Target::totalBitCount - Source::totalBitCount));
-            return TargetFloatDefinition::baseIntegerType(targetValue);
+            return typename TargetFloatDefinition::baseIntegerType(targetValue);
         }
         else // More complex path.
         {
@@ -157,7 +157,7 @@ namespace FloatNumberDetails
             }
 
             IntermediateType targetValue = targetFractionAndExponent | targetSign;
-            return TargetFloatDefinition::baseIntegerType(targetValue);
+            return typename TargetFloatDefinition::baseIntegerType(targetValue);
         }
     }
 
