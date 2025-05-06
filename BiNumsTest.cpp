@@ -239,7 +239,7 @@ bool VerifyFloatingTypes()
         std::numeric_limits<float>::infinity(),
        -std::numeric_limits<float>::infinity()
     };
-    constexpr double testNumbersFloat32[] = {
+    double testNumbersFloat32[] = {
         0.0,
         1.0,
        -1.0,
@@ -258,7 +258,7 @@ bool VerifyFloatingTypes()
         std::numeric_limits<float>::infinity(),
        -std::numeric_limits<float>::infinity()
     };
-    constexpr auto& testNumbersFloat64 = testNumbersFloat32;
+    auto& testNumbersFloat64 = testNumbersFloat32;
 
     bool success = true;
 
